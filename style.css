@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative; /* Necessário para o fundo se posicionar */
+}
+
+body::before {
+    content: "";
+    background-image: url(imagens/perfil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: fixed;    /* Garante que o fundo cubra a tela toda */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 0.8;       /* Ajuste a opacidade aqui (de 0 a 1) */
+    z-index: -1;        /* Coloca a imagem atrás de todo o conteúdo */
+}
+
+#venda{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    -webkit-text-stroke: 2px black;
+
+    animation: mudaCor 4s infinite alternate; 
+}
+
+/*titulo muda de cor */
+@keyframes mudaCor {
+    0% {
+        text-shadow: 0 0 10px #ff0000; 
+        color: white;
+    }
+    33% {
+        text-shadow: 0 0 20px #ff00dd; 
+        color: #c772f8;
+    }
+    66% {
+        text-shadow: 0 0 20px #0011ff; 
+        color: rgb(98, 177, 241);
+    }
+    100% {
+        text-shadow: 0 0 10px #ff3300; 
+        color:rgb(93, 245, 131);
+    }
+};
+
+main {
+    display: flex;
+    flex-direction: column; /* Coloca um item embaixo do outro */
+    align-items: center;    /* Centraliza tudo no eixo horizontal */
+    justify-content: center; /* Centraliza no eixo vertical, se o main tiver altura */
+    width: 100%;            /* Garante que ele ocupe toda a largura */
+}
+
+/* Centralizando e ajustando o bloco venda2 */
+.venda2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Tamanho da imagem em 50% da largura da tela */
+#fot {
+    width: 50%;
+    height: auto;
+    border-radius: 20px; /* Arredonda as bordas */
+    border: double 7px white;
+
+    animation: fotoCor 4s infinite alternate;
+}
+
+@keyframes fotoCor {
+    0% {
+        border: double 7px rgb(255, 0, 0);
+    }
+    33% {
+        border: double 7px rgb(76, 0, 255);
+    }
+    66% {
+        border: double 7px rgb(23, 255, 2);
+    }
+    100% {
+        border: double 7px rgb(255, 0, 200);
+    }
+};
+
+/* Tamanho da fonte do h2 */
+.venda2 h2 {
+    font-size: 40px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Container que agrupa os botões */
+.botoes-container {
+    display: flex;             /* Ativa o alinhamento flexível */
+    flex-direction: row;       /* Garante que fiquem um ao lado do outro */
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;       /* Centraliza verticalmente */
+    gap: 2%;                   /* Define a distância de 5% entre os itens */
+    margin-top: 20px;
+}
+
+/* Ajuste dos botões */
+.botoes {
+    /* Remova o display: flex daqui */
+    width: 50%;
+    height: 50%;
+    border-radius: 30px; 
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.botoes:hover {
+    transform: scale(1.1);
+}
+
+footer{
+    margin-bottom: 100px;
+}
